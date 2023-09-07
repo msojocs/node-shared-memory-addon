@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <string.h>
 
-#include "SharedMemory.h"
+#include "../SharedMemory.h"
 
 Napi::FunctionReference SharedMemory::constructor;
 
