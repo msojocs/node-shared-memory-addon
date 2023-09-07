@@ -1,0 +1,34 @@
+{
+  "name": "windows-sharedmemory",
+  "version": "1.0.0",
+  "description": "Native access to Windows named shared memory.",
+  "main": "sharedmemory.js",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^7.0.0",
+    "nw-gyp": "^3.6.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild",
+    "build": "node-gyp rebuild",
+    "build-nw": "nw-gyp rebuild --arch=x64 --target=0.54.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katicsd/sharedmemory.git"
+  },
+  "keywords": [
+    "shared",
+    "memory",
+    "windows",
+    "filemapping"
+  ],
+  "author": "Dániel Katics",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/katicsd/sharedmemory/issues"
+  },
+  "homepage": "https://github.com/katicsd/sharedmemory#readme"
+}
