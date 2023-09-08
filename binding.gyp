@@ -8,7 +8,7 @@
           "sources": [ "src/linux/sharedmemory.cc" ]
           }],
         ["OS=='win'", {
-          "sources": [ "src/windows/sharedmemory.cc", "src/windows/memory.cc" ]
+          "sources": [ "src/utils/convertor.cc", "src/windows/memory.cc" ]
         }]
       ], 
       'include_dirs': ["<!@(node -p \"require('node-addon-api').include\")"],

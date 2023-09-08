@@ -9,9 +9,9 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "node",
-      "preLaunchTask": "npm: build:dev",
+      // "preLaunchTask": "npm: build:dev",
       "args": [
-        "${workspaceFolder}/test.js"
+        "${workspaceFolder}/test/read.js"
       ],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
