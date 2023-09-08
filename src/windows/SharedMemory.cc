@@ -10,33 +10,38 @@ Napi::Object SharedMemory::Init(Napi::Env env, Napi::Object exports)
 {
     Napi::HandleScope scope(env);
 
-    Napi::Function func =
-        DefineClass(env,
-                    "SharedMemory",{
-                        InstanceMethod("open", &SharedMemory::open),
-                        InstanceMethod("close", &SharedMemory::close),
-                        InstanceMethod("readFloat", &SharedMemory::readFloat),
-                        InstanceMethod("readDouble", &SharedMemory::readDouble),
-                        InstanceMethod("readInt8", &SharedMemory::readInt8),
-                        InstanceMethod("readInt16", &SharedMemory::readInt16),
-                        InstanceMethod("readInt32", &SharedMemory::readInt32),
-                        InstanceMethod("readUInt8", &SharedMemory::readUInt8),
-                        InstanceMethod("readUInt16", &SharedMemory::readUInt16),
-                        InstanceMethod("readUInt32", &SharedMemory::readUInt32),
-                        InstanceMethod("writeFloat", &SharedMemory::writeFloat),
-                        InstanceMethod("writeDouble", &SharedMemory::writeDouble),
-                        InstanceMethod("writeInt8", &SharedMemory::writeInt8),
-                        InstanceMethod("writeInt16", &SharedMemory::writeInt16),
-                        InstanceMethod("writeInt32", &SharedMemory::writeInt32),
-                        InstanceMethod("writeUInt8", &SharedMemory::writeUInt8),
-                        InstanceMethod("writeUInt16", &SharedMemory::writeUInt16),
-                        InstanceMethod("writeUInt32", &SharedMemory::writeUInt32)                        
-                    });
+    // Napi::Function func =
+    //     DefineClass(env,
+    //                 "SharedMemory",{
+    //                     InstanceMethod("open", &SharedMemory::open),
+    //                     InstanceMethod("close", &SharedMemory::close),
+    //                     InstanceMethod("readFloat", &SharedMemory::readFloat),
+    //                     InstanceMethod("readDouble", &SharedMemory::readDouble),
+    //                     InstanceMethod("readInt8", &SharedMemory::readInt8),
+    //                     InstanceMethod("readInt16", &SharedMemory::readInt16),
+    //                     InstanceMethod("readInt32", &SharedMemory::readInt32),
+    //                     InstanceMethod("readUInt8", &SharedMemory::readUInt8),
+    //                     InstanceMethod("readUInt16", &SharedMemory::readUInt16),
+    //                     InstanceMethod("readUInt32", &SharedMemory::readUInt32),
+    //                     InstanceMethod("writeFloat", &SharedMemory::writeFloat),
+    //                     InstanceMethod("writeDouble", &SharedMemory::writeDouble),
+    //                     InstanceMethod("writeInt8", &SharedMemory::writeInt8),
+    //                     InstanceMethod("writeInt16", &SharedMemory::writeInt16),
+    //                     InstanceMethod("writeInt32", &SharedMemory::writeInt32),
+    //                     InstanceMethod("writeUInt8", &SharedMemory::writeUInt8),
+    //                     InstanceMethod("writeUInt16", &SharedMemory::writeUInt16),
+    //                     InstanceMethod("writeUInt32", &SharedMemory::writeUInt32)                        
+    //                 });
 
-    constructor = Napi::Persistent(func);
-    constructor.SuppressDestruct();
+    // constructor = Napi::Persistent(func);
+    // constructor.SuppressDestruct();
 
-    exports.Set("SharedMemory", func);
+    exports.Set(Napi::String::New(env, "setMemory"), Napi::Function::New(env, SetMemory));
+    exports.Set(Napi::String::New(env, "getMemory"), Napi::Function::New(env, GetMemory));
+    exports.Set(Napi::String::New(env, "removeMemory"), Napi::Function::New(env, RemoveMemory));
+    exports.Set(Napi::String::New(env, "removeAll"), Napi::Function::New(env, RemoveAll));
+
+    // exports.Set("SharedMemory", func);
     return exports;
 }
 

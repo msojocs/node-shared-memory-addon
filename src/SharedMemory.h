@@ -39,5 +39,8 @@ private:
   HANDLE MapFile;
   LPTSTR Buffer;
 };
-
+Napi::Value SetMemory(const Napi::CallbackInfo& info);
+Napi::Value GetMemory(const Napi::CallbackInfo& info);
+Napi::Value RemoveMemory(const Napi::CallbackInfo& info);
+Napi::Value RemoveAll(const Napi::CallbackInfo& info);
 #endif

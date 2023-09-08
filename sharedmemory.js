@@ -1,1 +1,1 @@
-module.exports = require('./build/Release/sharedmemory.node').SharedMemory;
+module.exports = require('./build/debug/sharedmemory.node').SharedMemory;

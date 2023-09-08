@@ -9,10 +9,11 @@
     "nw-gyp": "^3.6.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "install": "node-gyp rebuild",
     "build": "node-gyp rebuild",
-    "build-nw": "nw-gyp rebuild --arch=x64 --target=0.54.1"
+    "build:dev": "node-gyp rebuild --debug",
+    "build-nw": "nw-gyp rebuild --arch=x64 --target=0.54.1",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
